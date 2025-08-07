@@ -206,7 +206,7 @@ const Home = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2
-              className="text-4xl font-bold text-gray-900 mb-4"
+              className="text-3xl md:text-4xl font-bold text-gray-900 mb-4"
               data-aos="fade-up"
             >
               Mengapa Memilih CEK AAT?
@@ -247,7 +247,7 @@ const Home = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2
-              className="text-4xl font-bold text-gray-900 mb-4"
+              className="text-3xl md:text-4xl font-bold text-gray-900 mb-4"
               data-aos="fade-up"
             >
               Produk Unggulan Kami
@@ -302,7 +302,7 @@ const Home = () => {
       {/* CTA Section */}
       <section className="py-20 bg-gradient-to-r from-primary-600 to-secondary-600">
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
-          <h2 className="text-4xl font-bold text-white mb-6" data-aos="fade-up">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6" data-aos="fade-up">
             Mari Bergabung dengan Keluarga Besar CEK AAT
           </h2>
           <p

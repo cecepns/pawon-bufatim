@@ -1,4 +1,6 @@
 import { Instagram, Music } from 'lucide-react';
+import Tokopedia from '../assets/tokopedia.png'
+import Shopee from '../assets/shopee.png'
 
 const Footer = () => {
   return (
@@ -64,13 +66,19 @@ const Footer = () => {
               >
                 <Music size={20} />
               </a>
+              <div className="rounded-full flex items-center justify-center">
+                <img src={Tokopedia} alt="tokped" className="w-6 h-auto rounded-full" />
+              </div>
+              <div className="rounded-full flex items-center justify-center">
+                <img src={Shopee} alt="shopee" className="w-6 h-auto rounded-full" />
+              </div>
             </div>
           </div>
         </div>
 
         <div className="border-t border-gray-800 mt-8 pt-8 text-center">
           <p className="text-gray-400">
-            © 2024 UMKM CEK AAT. Semua hak cipta dilindungi.
+            © 2025 UMKM CEK AAT. Semua hak cipta dilindungi.
           </p>
         </div>
       </div>

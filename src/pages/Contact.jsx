@@ -1,14 +1,16 @@
-import { useEffect } from 'react';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
-import { MapPin, Instagram, Music, Phone, Mail, Clock, MessageCircle } from 'lucide-react';
+import { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { MapPin, Instagram, Music, Clock, MessageCircle } from "lucide-react";
+import Shopee from "../assets/shopee.png";
+import Tokopedia from "../assets/tokopedia.png";
 
 const Contact = () => {
   useEffect(() => {
     AOS.init({
       duration: 1000,
       once: true,
-      easing: 'ease-out-cubic',
+      easing: "ease-out-cubic",
     });
   }, []);
 
@@ -16,18 +18,18 @@ const Contact = () => {
     {
       icon: <MapPin className="w-6 h-6 text-primary-500" />,
       title: "Alamat",
-      content: "Kelurahan 7 Ulu, Palembang, Sumatera Selatan, Indonesia"
+      content: "Kelurahan 7 Ulu, Palembang, Sumatera Selatan, Indonesia",
     },
     {
       icon: <Clock className="w-6 h-6 text-primary-500" />,
       title: "Jam Operasional",
-      content: "Senin - Sabtu: 08.00 - 17.00 WIB"
+      content: "Senin - Sabtu: 08.00 - 17.00 WIB",
     },
     {
       icon: <MessageCircle className="w-6 h-6 text-primary-500" />,
       title: "Media Sosial",
-      content: "Ikuti kami di Instagram dan TikTok untuk update terbaru"
-    }
+      content: "Ikuti kami di Instagram dan TikTok untuk update terbaru",
+    },
   ];
 
   const socialLinks = [
@@ -36,15 +38,29 @@ const Contact = () => {
       icon: <Instagram className="w-6 h-6" />,
       url: "https://www.instagram.com/cek.aat?igsh=Z200cW5vdGtqcnc%3D&utm_source=qr",
       color: "bg-gradient-to-r from-purple-500 to-pink-500",
-      description: "@cek.aat"
+      description: "@cek.aat",
     },
     {
       name: "TikTok",
       icon: <Music className="w-6 h-6" />,
       url: "https://www.tiktok.com/@cek.aat?_t=ZS-8yaxwUMn8Ft&_r=1",
       color: "bg-gradient-to-r from-gray-900 to-gray-700",
-      description: "@cek.aat"
-    }
+      description: "@cek.aat",
+    },
+    {
+      name: "Shopee",
+      icon: <img alt="shopee" src={Shopee} className="w-8 h-auto rounded-full" />,
+      url: "#",
+      color: "bg-gradient-to-r from-orange-500 to-orange-600",
+      description: "burlian_toko",
+    },
+    {
+      name: "Tokopedia",
+      icon: <img alt="tokped" src={Tokopedia} className="w-8 h-auto rounded-full" />,
+      url: "#",
+      color: "bg-gradient-to-r from-green-500 to-green-600",
+      description: "burlian toko",
+    },
   ];
 
   return (
@@ -53,18 +69,19 @@ const Contact = () => {
       <section className="relative py-20 bg-gradient-to-br from-primary-600 via-primary-500 to-secondary-600 overflow-hidden">
         <div className="absolute inset-0 bg-[url('assets/banner.jpg')] bg-cover bg-center opacity-10"></div>
         <div className="relative z-10 max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
-          <h1 
-            className="text-5xl md:text-6xl font-bold text-white mb-6"
+          <h1
+            className="text-3xl md:text-6xl font-bold text-white mb-6"
             data-aos="fade-up"
           >
             Hubungi <span className="text-primary-200">Kami</span>
           </h1>
-          <p 
+          <p
             className="text-xl text-gray-100 leading-relaxed"
             data-aos="fade-up"
             data-aos-delay="200"
           >
-            Kami siap melayani dan menjawab pertanyaan Anda tentang produk-produk berkualitas kami
+            Kami siap melayani dan menjawab pertanyaan Anda tentang
+            produk-produk berkualitas kami
           </p>
         </div>
       </section>
@@ -73,13 +90,13 @@ const Contact = () => {
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 
-              className="text-4xl font-bold text-gray-900 mb-4"
+            <h2
+              className="text-3xl md:text-4xl font-bold text-gray-900 mb-4"
               data-aos="fade-up"
             >
               Informasi Kontak
             </h2>
-            <p 
+            <p
               className="text-xl text-gray-600 max-w-3xl mx-auto"
               data-aos="fade-up"
               data-aos-delay="200"
@@ -100,16 +117,14 @@ const Contact = () => {
                 <h3 className="text-xl font-semibold text-gray-900 mb-3">
                   {info.title}
                 </h3>
-                <p className="text-gray-600 leading-relaxed">
-                  {info.content}
-                </p>
+                <p className="text-gray-600 leading-relaxed">{info.content}</p>
               </div>
             ))}
           </div>
 
           {/* Social Media Links */}
           <div className="text-center mb-16">
-            <h3 
+            <h3
               className="text-3xl font-bold text-gray-900 mb-8"
               data-aos="fade-up"
             >
@@ -129,7 +144,9 @@ const Contact = () => {
                   <div className="flex-shrink-0">{social.icon}</div>
                   <div className="text-left">
                     <div className="font-semibold text-lg">{social.name}</div>
-                    <div className="text-sm opacity-90">{social.description}</div>
+                    <div className="text-sm opacity-90">
+                      {social.description}
+                    </div>
                   </div>
                 </a>
               ))}
@@ -142,13 +159,13 @@ const Contact = () => {
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 
-              className="text-4xl font-bold text-gray-900 mb-4"
+            <h2
+              className="text-3xl md:text-4xl font-bold text-gray-900 mb-4"
               data-aos="fade-up"
             >
               Lokasi Kami
             </h2>
-            <p 
+            <p
               className="text-xl text-gray-600"
               data-aos="fade-up"
               data-aos-delay="200"
@@ -157,7 +174,7 @@ const Contact = () => {
             </p>
           </div>
 
-          <div 
+          <div
             className="bg-white rounded-2xl shadow-lg overflow-hidden"
             data-aos="fade-up"
             data-aos-delay="400"
@@ -197,20 +214,21 @@ const Contact = () => {
       {/* CTA Section */}
       <section className="py-20 bg-gradient-to-r from-primary-600 to-secondary-600">
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
-          <h2 
-            className="text-4xl font-bold text-white mb-6"
+          <h2
+            className="text-3xl md:text-4xl font-bold text-white mb-6"
             data-aos="fade-up"
           >
             Siap Berbelanja Produk Berkualitas?
           </h2>
-          <p 
+          <p
             className="text-xl text-gray-100 mb-8 leading-relaxed"
             data-aos="fade-up"
             data-aos-delay="200"
           >
-            Hubungi kami sekarang untuk informasi lebih lanjut tentang produk pempek dan tepung tulang ikan gabus berkualitas tinggi
+            Hubungi kami sekarang untuk informasi lebih lanjut tentang produk
+            pempek dan tepung tulang ikan gabus berkualitas tinggi
           </p>
-          <div 
+          <div
             className="flex flex-col sm:flex-row gap-4 justify-center"
             data-aos="fade-up"
             data-aos-delay="400"

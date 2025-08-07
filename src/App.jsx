@@ -21,7 +21,7 @@ function ScrollToTop() {
 function App() {
   return (
     <Router>
-      <div className="App">
+      <div className="App overflow-x-hidden">
         <ScrollToTop />
         <Navbar />
         <Routes>
