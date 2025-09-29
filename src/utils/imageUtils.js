@@ -6,7 +6,7 @@
 const PLACEHOLDER_IMAGE = "/placeholder-product.svg";
 
 // API base URL for images
-const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+const API_BASE_URL = "https://api-inventory.isavralabel.com/pawon";
 
 /**
  * Get the full image URL for a product

@@ -123,7 +123,7 @@ const Contact = () => {
           </div>
 
           {/* Social Media Links */}
-          <div className="text-center mb-16">
+          {/* <div className="text-center mb-16">
             <h3
               className="text-3xl font-bold text-gray-900 mb-8"
               data-aos="fade-up"
@@ -151,7 +151,7 @@ const Contact = () => {
                 </a>
               ))}
             </div>
-          </div>
+          </div> */}
         </div>
       </section>
 
@@ -228,7 +228,7 @@ const Contact = () => {
             Hubungi kami sekarang untuk informasi lebih lanjut tentang produk
             pempek dan tekwan berkualitas tinggi
           </p>
-          <div
+          {/* <div
             className="flex flex-col sm:flex-row gap-4 justify-center"
             data-aos="fade-up"
             data-aos-delay="400"
@@ -251,7 +251,7 @@ const Contact = () => {
               <Music size={20} />
               <span>Lihat di TikTok</span>
             </a>
-          </div>
+          </div> */}
         </div>
       </section>
     </div>

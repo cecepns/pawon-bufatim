@@ -91,7 +91,7 @@ const Home = () => {
             data-aos="fade-up"
             data-aos-delay="400"
           >
-            Specialist Pempek dan Tekwan Berkualitas Tinggi
+            Specialist Pempek dan Tekwan Berkualitas Tinggi. Terima catering.
           </p>
           <div
             className="flex flex-col sm:flex-row gap-4 justify-center"

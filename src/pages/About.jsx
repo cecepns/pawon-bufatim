@@ -162,7 +162,7 @@ const About = () => {
       </section>
 
       {/* Timeline Section */}
-      <section className="py-16 md:py-20 bg-white">
+      {/* <section className="py-16 md:py-20 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12 md:mb-16">
             <h2 
@@ -181,7 +181,6 @@ const About = () => {
           </div>
 
           <div className="relative">
-            {/* Timeline Line - Hidden on mobile, visible on desktop */}
             <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-primary-200"></div>
 
             {milestones.map((milestone, index) => (
@@ -191,7 +190,6 @@ const About = () => {
                 data-aos="fade-up"
                 data-aos-delay={index * 100}
               >
-                {/* Desktop Layout */}
                 <div className={`hidden md:flex items-center ${index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'}`}>
                   <div className={`w-1/2 ${index % 2 === 0 ? 'pr-8 text-right' : 'pl-8 text-left'}`}>
                     <div className="bg-white p-6 rounded-2xl shadow-lg">
@@ -207,11 +205,9 @@ const About = () => {
                     </div>
                   </div>
 
-                  {/* Timeline Dot */}
                   <div className="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-primary-500 rounded-full border-4 border-white shadow-lg"></div>
                 </div>
 
-                {/* Mobile Layout */}
                 <div className="md:hidden">
                   <div className="bg-white p-6 rounded-2xl shadow-lg">
                     <div className="flex items-center space-x-3 mb-3">
@@ -232,7 +228,7 @@ const About = () => {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Location Section */}
       <section className="py-16 md:py-20 bg-gray-50">

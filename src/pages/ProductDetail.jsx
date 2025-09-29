@@ -68,7 +68,7 @@ const ProductDetail = () => {
 
   const handleWhatsAppOrder = () => {
     const message = `Halo, saya tertarik dengan produk *${product.name}* dengan harga *Rp ${parseFloat(product.price).toLocaleString('id-ID')}*. Apakah produk ini tersedia?`;
-    const whatsappUrl = `https://wa.me/6281234567890?text=${encodeURIComponent(message)}`;
+    const whatsappUrl = `https://wa.me/6285246219423?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
   };
 
