@@ -1,6 +1,4 @@
-import { Instagram, Music } from 'lucide-react';
-import Tokopedia from '../assets/tokopedia.png'
-import Shopee from '../assets/shopee.png'
+import { Instagram } from 'lucide-react';
 
 const Footer = () => {
   return (
@@ -11,12 +9,12 @@ const Footer = () => {
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
               <div className="w-10 h-10 bg-primary-500 rounded-full flex items-center justify-center">
-                <span className="text-white font-bold text-lg">CA</span>
+                <span className="text-white font-bold text-lg">PB</span>
               </div>
-              <span className="font-bold text-xl">UMKM CEK AAT</span>
+              <span className="font-bold text-xl">Pawon Bufatim</span>
             </div>
             <p className="text-gray-300 leading-relaxed">
-              Mengangkat potensi lokal dan memberdayakan masyarakat melalui produk berkualitas sejak tahun 2000.
+              Specialist pempek dan tekwan berkualitas tinggi dengan cita rasa tradisional yang autentik.
             </p>
           </div>
 
@@ -46,20 +44,21 @@ const Footer = () => {
           <div className="space-y-4">
             <h3 className="font-semibold text-lg">Hubungi Kami</h3>
             <div className="space-y-2">
-              <p className="text-gray-300">Kelurahan 7 Ulu, Palembang</p>
-              <p className="text-gray-300">Sumatera Selatan, Indonesia</p>
+              <p className="text-gray-300">Jalan Sei Wain No.KM.15 No.47</p>
+              <p className="text-gray-300">Karang Joang, Balikpapan Utara, Balikpapan</p>
+              <p className="text-gray-300">Kalimantan Timur 76127</p>
             </div>
             <div className="flex space-x-4">
               <a
-                href="https://www.instagram.com/cek.aat?igsh=Z200cW5vdGtqcnc%3D&utm_source=qr"
+                href="https://www.instagram.com/pawon.bufatim/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-2 bg-gray-800 rounded-full hover:bg-primary-500 transition-colors"
               >
                 <Instagram size={20} />
               </a>
-              <a
-                href="https://www.tiktok.com/@cek.aat?_t=ZS-8yaxwUMn8Ft&_r=1"
+              {/* <a
+                href="#"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-2 bg-gray-800 rounded-full hover:bg-primary-500 transition-colors"
@@ -71,14 +70,14 @@ const Footer = () => {
               </div>
               <div className="rounded-full flex items-center justify-center">
                 <img src={Shopee} alt="shopee" className="w-6 h-auto rounded-full" />
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
 
         <div className="border-t border-gray-800 mt-8 pt-8 text-center">
           <p className="text-gray-400">
-            © 2025 UMKM CEK AAT. Semua hak cipta dilindungi.
+            © 2025 Pawon Bufatim. Semua hak cipta dilindungi.
           </p>
         </div>
       </div>

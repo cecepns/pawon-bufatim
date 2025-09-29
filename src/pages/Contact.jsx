@@ -18,7 +18,7 @@ const Contact = () => {
     {
       icon: <MapPin className="w-6 h-6 text-primary-500" />,
       title: "Alamat",
-      content: "Kelurahan 7 Ulu, Palembang, Sumatera Selatan, Indonesia",
+      content: "Jalan Sei Wain No.KM.15 No.47, Karang Joang, Kec. Balikpapan Utara, Kota Balikpapan, Kalimantan Timur 76127",
     },
     {
       icon: <Clock className="w-6 h-6 text-primary-500" />,
@@ -36,35 +36,35 @@ const Contact = () => {
     {
       name: "Instagram",
       icon: <Instagram className="w-6 h-6" />,
-      url: "https://www.instagram.com/cek.aat?igsh=Z200cW5vdGtqcnc%3D&utm_source=qr",
+      url: "#",
       color: "bg-gradient-to-r from-purple-500 to-pink-500",
-      description: "@cek.aat",
+      description: "@pawonbufatim",
     },
     {
       name: "TikTok",
       icon: <Music className="w-6 h-6" />,
-      url: "https://www.tiktok.com/@cek.aat?_t=ZS-8yaxwUMn8Ft&_r=1",
+      url: "#",
       color: "bg-gradient-to-r from-gray-900 to-gray-700",
-      description: "@cek.aat",
+      description: "@pawonbufatim",
     },
     {
       name: "Shopee",
       icon: <img alt="shopee" src={Shopee} className="w-8 h-auto rounded-full" />,
       url: "#",
       color: "bg-gradient-to-r from-orange-500 to-orange-600",
-      description: "burlian_toko",
+      description: "pawon_bufatim",
     },
     {
       name: "Tokopedia",
       icon: <img alt="tokped" src={Tokopedia} className="w-8 h-auto rounded-full" />,
       url: "#",
       color: "bg-gradient-to-r from-green-500 to-green-600",
-      description: "burlian toko",
+      description: "pawon bufatim",
     },
   ];
 
   return (
-    <div className="min-h-screen pt-20">
+    <div className="min-h-screen pt-32">
       {/* Hero Section */}
       <section className="relative py-20 bg-gradient-to-br from-primary-600 via-primary-500 to-secondary-600 overflow-hidden">
         <div className="absolute inset-0 bg-[url('assets/banner.jpg')] bg-cover bg-center opacity-10"></div>
@@ -81,7 +81,7 @@ const Contact = () => {
             data-aos-delay="200"
           >
             Kami siap melayani dan menjawab pertanyaan Anda tentang
-            produk-produk berkualitas kami
+            produk pempek dan tekwan berkualitas tinggi kami
           </p>
         </div>
       </section>
@@ -170,7 +170,7 @@ const Contact = () => {
               data-aos="fade-up"
               data-aos-delay="200"
             >
-              Kunjungi langsung toko kami di Kelurahan 7 Ulu, Palembang
+              Kunjungi langsung toko kami di Balikpapan, Kalimantan Timur
             </p>
           </div>
 
@@ -181,14 +181,14 @@ const Contact = () => {
           >
             <div className="aspect-w-16 aspect-h-9 h-96">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3984.0123456789!2d104.7456789!3d-2.9876543!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMsKwNTknMTUuNiJTIDEwNMKwNDQnNDQuNCJF!5e0!3m2!1sen!2sid!4v1234567890"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3984.0123456789!2d116.8456789!3d-1.1876543!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMcKwMTEnMTUuNiJTIDExNsw4NDcnNDQuNCJF!5e0!3m2!1sen!2sid!4v1234567890"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}
                 allowFullScreen=""
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                title="Lokasi UMKM CEK AAT"
+                title="Lokasi Pawon Bufatim"
               ></iframe>
             </div>
             <div className="p-8">
@@ -196,10 +196,10 @@ const Contact = () => {
                 <MapPin className="w-6 h-6 text-primary-500 mt-1 flex-shrink-0" />
                 <div>
                   <h3 className="text-xl font-semibold text-gray-900 mb-2">
-                    UMKM CEK AAT
+                    Pawon Bufatim
                   </h3>
                   <p className="text-gray-600 leading-relaxed">
-                    Kelurahan 7 Ulu, Palembang, Sumatera Selatan, Indonesia
+                    Jalan Sei Wain No.KM.15 No.47, Karang Joang, Kec. Balikpapan Utara, Kota Balikpapan, Kalimantan Timur 76127
                   </p>
                   <p className="text-gray-500 mt-2">
                     Mudah diakses dengan transportasi umum dan kendaraan pribadi
@@ -226,7 +226,7 @@ const Contact = () => {
             data-aos-delay="200"
           >
             Hubungi kami sekarang untuk informasi lebih lanjut tentang produk
-            pempek dan tepung tulang ikan gabus berkualitas tinggi
+            pempek dan tekwan berkualitas tinggi
           </p>
           <div
             className="flex flex-col sm:flex-row gap-4 justify-center"
@@ -234,7 +234,7 @@ const Contact = () => {
             data-aos-delay="400"
           >
             <a
-              href="https://www.instagram.com/cek.aat?igsh=Z200cW5vdGtqcnc%3D&utm_source=qr"
+              href="#"
               target="_blank"
               rel="noopener noreferrer"
               className="bg-white text-primary-600 px-8 py-4 rounded-full font-semibold hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 flex items-center justify-center space-x-2"
@@ -243,7 +243,7 @@ const Contact = () => {
               <span>Chat via Instagram</span>
             </a>
             <a
-              href="https://www.tiktok.com/@cek.aat?_t=ZS-8yaxwUMn8Ft&_r=1"
+              href="#"
               target="_blank"
               rel="noopener noreferrer"
               className="border-2 border-white text-white px-8 py-4 rounded-full font-semibold hover:bg-white hover:text-primary-600 transition-all duration-300 transform hover:scale-105 flex items-center justify-center space-x-2"

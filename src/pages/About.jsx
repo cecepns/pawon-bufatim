@@ -16,18 +16,18 @@ const About = () => {
   const milestones = [
     {
       year: "2000",
-      title: "Pendirian UMKM CEK AAT",
-      description: "Didirikan di Kelurahan 7 Ulu, Palembang sebagai usaha rumahan dengan skala kecil"
+      title: "Pendirian Pawon Bufatim",
+      description: "Didirikan sebagai spesialis pempek dan tekwan berkualitas tinggi"
     },
     {
       year: "2005",
-      title: "Ekspansi Produk",
-      description: "Mulai mengembangkan variasi produk pempek dan tepung tulang ikan gabus"
+      title: "Spesialisasi Produk",
+      description: "Fokus pada pengembangan produk pempek dan tekwan premium"
     },
     {
       year: "2010",
       title: "Pengakuan Masyarakat",
-      description: "Mendapat kepercayaan luas dari masyarakat Palembang dan sekitarnya"
+      description: "Mendapat kepercayaan luas dari masyarakat dengan produk berkualitas tinggi"
     },
     {
       year: "2020",
@@ -37,7 +37,7 @@ const About = () => {
     {
       year: "2025",
       title: "Inovasi Berkelanjutan",
-      description: "Terus berinovasi dengan tetap mempertahankan kualitas dan nilai tradisional"
+      description: "Terus berinovasi dalam produk pempek dan tekwan dengan kualitas premium"
     }
   ];
 
@@ -65,7 +65,7 @@ const About = () => {
   ];
 
   return (
-    <div className="min-h-screen pt-20">
+    <div className="min-h-screen pt-32">
       {/* Hero Section */}
       <section className="relative py-16 md:py-20 bg-gradient-to-br from-primary-600 via-primary-500 to-secondary-600 overflow-hidden">
         <div className="absolute inset-0 bg-[url('https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=1920')] bg-cover bg-center opacity-10"></div>
@@ -74,14 +74,14 @@ const About = () => {
             className="text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-4 md:mb-6"
             data-aos="fade-up"
           >
-            Tentang <span className="text-primary-200">CEK AAT</span>
+            Tentang <span className="text-primary-200">Pawon Bufatim</span>
           </h1>
           <p 
             className="text-lg md:text-xl text-gray-100 leading-relaxed"
             data-aos="fade-up"
             data-aos-delay="200"
           >
-            Perjalanan 24 tahun dalam mengangkat potensi lokal dan memberdayakan masyarakat
+            Specialist pempek dan tekwan berkualitas tinggi dengan cita rasa tradisional
           </p>
         </div>
       </section>
@@ -93,27 +93,27 @@ const About = () => {
             <div data-aos="fade-right" className="order-2 lg:order-1">
               <img
                 src={Logo}
-                alt="UMKM CEK AAT"
+                alt="Pawon Bufatim"
                 className="w-full hidden md:block max-w-md mx-auto lg:mx-0 rounded-2xl shadow-lg"
               />
             </div>
             <div data-aos="fade-left" className="order-1 lg:order-2">
               <div className="flex items-center space-x-2 mb-4">
                 <Calendar className="w-5 h-5 md:w-6 md:h-6 text-primary-500" />
-                <span className="text-primary-500 font-semibold text-sm md:text-base">Sejak 2000</span>
+                <span className="text-primary-500 font-semibold text-sm md:text-base">Spesialis Pempek & Tekwan</span>
               </div>
               <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6">
                 Cerita Kami Dimulai
               </h2>
               <div className="space-y-3 md:space-y-4 text-gray-600 leading-relaxed text-sm md:text-base">
                 <p>
-                  UMKM CEK AAT didirikan pada tahun 2000 di Kelurahan 7 Ulu, Palembang, sebagai wujud komitmen untuk mengangkat potensi lokal dan memberdayakan masyarakat sekitar. Usaha ini lahir dari semangat wirausaha dan kepedulian terhadap ekonomi keluarga kecil, yang digagas langsung di bawah naungan H. Burlian Topo, seorang tokoh masyarakat yang dikenal visioner dan peduli terhadap pengembangan UMKM.
+                  Pawon Bufatim adalah spesialis pempek dan tekwan yang berkomitmen menghadirkan produk berkualitas tinggi dengan cita rasa tradisional. Kami fokus pada pengembangan produk pempek dan tekwan autentik yang telah dipercaya oleh masyarakat dengan standar kualitas terbaik.
                 </p>
                 <p>
-                  Berawal dari usaha rumahan dengan skala kecil, UMKM CEK AAT terus tumbuh dan berkembang dengan menjunjung tinggi kualitas, kejujuran, dan keberlanjutan. Dukungan masyarakat sekitar serta semangat gotong royong menjadi pondasi kuat dalam perjalanan usaha ini.
+                  Dengan pengalaman dan keahlian dalam bidang pempek dan tekwan, Pawon Bufatim terus berinovasi untuk menghadirkan produk terbaik. Kami menjunjung tinggi kualitas, kejujuran, dan konsistensi dalam setiap produk yang kami hasilkan.
                 </p>
                 <p>
-                  Dengan berfokus pada produk-produk lokal bernilai tinggi, CEK AAT menjadi salah satu UMKM yang mampu bertahan dan berkembang di tengah tantangan zaman. Hingga kini, UMKM CEK AAT tetap eksis dan menjadi inspirasi bagi pelaku usaha lainnya, membuktikan bahwa usaha yang dimulai dengan niat baik dan manajemen yang tepat dapat memberi dampak nyata bagi kemajuan ekonomi kerakyatan.
+                  Pawon Bufatim berfokus pada spesialisasi pempek dan tekwan berkualitas tinggi. Kami terus berkembang dan berinovasi untuk memenuhi kebutuhan pelanggan yang menginginkan cita rasa pempek dan tekwan terbaik dengan standar kualitas premium.
                 </p>
               </div>
             </div>
@@ -136,7 +136,7 @@ const About = () => {
               data-aos="fade-up"
               data-aos-delay="200"
             >
-              Prinsip-prinsip yang menjadi fondasi dalam setiap langkah perjalanan UMKM CEK AAT
+              Prinsip-prinsip yang menjadi fondasi dalam setiap langkah perjalanan Pawon Bufatim
             </p>
           </div>
 
@@ -176,7 +176,7 @@ const About = () => {
               data-aos="fade-up"
               data-aos-delay="200"
             >
-              Milestone penting dalam perjalanan UMKM CEK AAT selama 24 tahun
+              Milestone penting dalam perjalanan Pawon Bufatim
             </p>
           </div>
 
@@ -250,7 +250,7 @@ const About = () => {
               data-aos-delay="200"
             >
               <MapPin className="w-5 h-5 md:w-6 md:h-6 text-primary-500" />
-              <span className="text-sm md:text-base">Kelurahan 7 Ulu, Palembang, Sumatera Selatan</span>
+              <span className="text-sm md:text-base">Jalan Sei Wain No.KM.15 No.47, Karang Joang, Balikpapan Utara, Balikpapan, Kalimantan Timur</span>
             </div>
           </div>
 
@@ -260,7 +260,7 @@ const About = () => {
             data-aos-delay="400"
           >
             <p className="text-sm md:text-base text-gray-600 leading-relaxed max-w-3xl mx-auto">
-              Berlokasi strategis di jantung kota Palembang, UMKM CEK AAT mudah diakses dan telah menjadi bagian dari kehidupan masyarakat lokal. Lokasi ini dipilih dengan pertimbangan kedekatan dengan komunitas yang ingin kami berdayakan dan layani.
+              Berlokasi strategis di Balikpapan, Pawon Bufatim mudah diakses dan telah menjadi bagian dari kehidupan masyarakat lokal. Lokasi ini dipilih dengan pertimbangan kedekatan dengan komunitas yang ingin kami layani dengan produk pempek dan tekwan berkualitas tinggi.
             </p>
           </div>
         </div>

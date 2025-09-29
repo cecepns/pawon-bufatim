@@ -20,6 +20,7 @@ const Navbar = () => {
 
   const navItems = [
     { name: 'Beranda', path: '/' },
+    { name: 'Produk', path: '/products' },
     { name: 'Tentang Kami', path: '/about' },
     { name: 'Kontak', path: '/contact' },
   ];

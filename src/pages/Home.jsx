@@ -8,17 +8,13 @@ import {
   Users,
   Award,
   Heart,
-  X,
 } from "lucide-react";
-import Product1 from "../assets/product-1.jpeg";
-import Product2 from "../assets/product-2.jpeg";
-import Product3 from "../assets/product-3.jpeg";
-import Product4 from "../assets/product-4.jpeg";
-import Product5 from "../assets/product-5.jpeg";
+import axios from "../config/axios";
+import { getImageUrl, getImageAltText } from "../utils/imageUtils";
 
 const Home = () => {
-  const [selectedProduct, setSelectedProduct] = useState(null);
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     AOS.init({
@@ -26,20 +22,27 @@ const Home = () => {
       once: true,
       easing: "ease-out-cubic",
     });
+    fetchProducts();
   }, []);
 
-
-
-  const openModal = (product) => {
-    setSelectedProduct(product);
-    setIsModalOpen(true);
-    document.body.style.overflow = "hidden";
-  };
-
-  const closeModal = () => {
-    setIsModalOpen(false);
-    setSelectedProduct(null);
-    document.body.style.overflow = "unset";
+  const fetchProducts = async () => {
+    try {
+      setLoading(true);
+      const response = await axios.get("/products", {
+        params: {
+          limit: 4,
+          page: 1
+        }
+      });
+      
+      if (response.data.success) {
+        setProducts(response.data.data);
+      }
+    } catch (error) {
+      console.error("Error fetching products:", error);
+    } finally {
+      setLoading(false);
+    }
   };
 
   const features = [
@@ -47,110 +50,28 @@ const Home = () => {
       icon: <Star className="w-8 h-8 text-primary-500" />,
       title: "Kualitas Terjamin",
       description:
-        "Produk berkualitas tinggi dengan standar terbaik sejak 2000",
+        "Produk pempek dan tekwan berkualitas tinggi dengan standar terbaik",
     },
     {
       icon: <Users className="w-8 h-8 text-primary-500" />,
-      title: "Memberdayakan Masyarakat",
-      description: "Mengangkat potensi lokal dan ekonomi kerakyatan",
+      title: "Spesialis Pempek & Tekwan",
+      description: "Spesialisasi dalam pempek dan tekwan autentik",
     },
     {
       icon: <Award className="w-8 h-8 text-primary-500" />,
-      title: "Pengalaman 24 Tahun",
-      description: "Dipercaya masyarakat selama lebih dari dua dekade",
+      title: "Cita Rasa Tradisional",
+      description: "Dipercaya masyarakat dengan cita rasa tradisional",
     },
     {
       icon: <Heart className="w-8 h-8 text-primary-500" />,
-      title: "Produk Lokal",
-      description: "Bangga menghadirkan cita rasa asli Palembang",
+      title: "Produk Premium",
+      description: "Bangga menghadirkan cita rasa pempek dan tekwan terbaik",
     },
   ];
 
-  const products = [
-    {
-      name: "Tekwan Kering",
-      // description: "Pempek autentik dengan cita rasa tradisional yang telah diwariskan turun temurun. Dibuat dengan bahan berkualitas tinggi dan resep rahasia keluarga yang telah terjaga selama puluhan tahun.",
-      image: Product1,
-      price: "Rp 40.000",
-      // details: "Tersedia dalam berbagai ukuran dan varian rasa. Cocok untuk konsumsi pribadi maupun acara keluarga."
-    },
-    {
-      name: "Pempek Keriting",
-      // description: "Tepung berkualitas tinggi dari ikan gabus pilihan, kaya akan protein dan nutrisi. Diproses dengan teknologi modern untuk menjaga kualitas dan kandungan gizi.",
-      image: Product2,
-      price: "Rp 3.000",
-      // details: "Ideal untuk campuran makanan bayi, suplemen kesehatan, dan bahan baku industri makanan."
-    },
-    {
-      name: "Pempek Lenjer",
-      // description: "Berbagai produk olahan ikan berkualitas tinggi yang diproduksi dengan standar higienis dan teknologi terkini untuk menghasilkan produk terbaik.",
-      image: Product3,
-      price: "Rp 3.000",
-      // details: "Meliputi berbagai jenis olahan ikan yang cocok untuk berbagai kebutuhan konsumen."
-    },
-    {
-      name: "Pempek Telur",
-      // description: "Produk-produk unggulan yang menggabungkan cita rasa tradisional dengan inovasi modern untuk memenuhi kebutuhan pasar yang terus berkembang.",
-      image: Product4,
-      price: "Rp 3.000",
-      // details: "Dibuat dengan bahan lokal pilihan dan diproduksi dengan standar kualitas tinggi."
-    },
-    {
-      name: "Tepung Tulang Ikan Gabus",
-      // description: "Produk eksklusif yang menjadi kebanggaan CEK AAT, menggabungkan tradisi dan inovasi untuk menghasilkan produk terbaik.",
-      image: Product5,
-      price: "Rp 80.000 (250g)",
-      // details: "Produk premium dengan kualitas terbaik yang telah dipercaya oleh ribuan pelanggan."
-    },
-  ];
 
   return (
     <div className="min-h-screen">
-
-      {/* Product Modal */}
-      {isModalOpen && selectedProduct && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black bg-opacity-50">
-          <div className="bg-white rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
-            <div className="relative">
-              <button
-                onClick={closeModal}
-                className="absolute top-4 right-4 z-10 bg-white rounded-full p-2 shadow-lg hover:bg-gray-100 transition-colors duration-200"
-              >
-                <X size={20} />
-              </button>
-              <div className="w-full h-96 py-5">
-                <img
-                  src={selectedProduct.image}
-                  alt={selectedProduct.name}
-                  className="w-full h-full object-contain rounded-t-2xl"
-                />
-              </div>
-              <div className="p-6">
-                <h3 className="text-2xl font-bold text-gray-900 mb-3">
-                  {selectedProduct.name}
-                </h3>
-                <p className="text-green-600 font-semibold text-lg mb-4">
-                  {selectedProduct.price}
-                </p>
-                <p className="text-gray-600 leading-relaxed mb-4">
-                  {selectedProduct.description}
-                </p>
-                <p className="text-gray-700 leading-relaxed">
-                  {selectedProduct.details}
-                </p>
-                <div className="mt-6 flex gap-3">
-                  <button
-                    onClick={closeModal}
-                    className="px-6 py-3 border border-gray-300 text-gray-700 rounded-full font-semibold hover:bg-gray-50 transition-colors duration-200"
-                  >
-                    Tutup
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
 
       {/* Hero Section */}
       <section className="relative h-screen flex items-center justify-center bg-gradient-to-br from-primary-600 via-primary-500 to-secondary-600 overflow-hidden">
@@ -163,14 +84,14 @@ const Home = () => {
             data-aos="fade-up"
             data-aos-delay="200"
           >
-            UMKM <span className="text-primary-200">CEK AAT</span>
+            <span className="text-primary-200">Pawon Bufatim</span>
           </h1>
           <p
             className="text-xl md:text-2xl mb-8 text-gray-100 leading-relaxed"
             data-aos="fade-up"
             data-aos-delay="400"
           >
-            Mengangkat Potensi Lokal, Memberdayakan Masyarakat Sejak 2000
+            Specialist Pempek dan Tekwan Berkualitas Tinggi
           </p>
           <div
             className="flex flex-col sm:flex-row gap-4 justify-center"
@@ -209,7 +130,7 @@ const Home = () => {
               className="text-3xl md:text-4xl font-bold text-gray-900 mb-4"
               data-aos="fade-up"
             >
-              Mengapa Memilih CEK AAT?
+              Mengapa Memilih Pawon Bufatim?
             </h2>
             <p
               className="text-xl text-gray-600 max-w-3xl mx-auto"
@@ -217,7 +138,7 @@ const Home = () => {
               data-aos-delay="200"
             >
               Komitmen kami terhadap kualitas dan pemberdayaan masyarakat
-              menjadikan CEK AAT pilihan terpercaya
+              menjadikan Pawon Bufatim pilihan terpercaya
             </p>
           </div>
 
@@ -262,39 +183,67 @@ const Home = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            {products.map((product, index) => (
-              <div
-                key={index}
-                className="group cursor-pointer"
-                data-aos="fade-up"
-                data-aos-delay={index * 200}
-                onClick={() => openModal(product)}
-              >
-                <div className="relative overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300">
-                  <img
-                    src={product.image}
-                    alt={product.name}
-                    className="w-full h-96 object-cover group-hover:scale-110 transition-transform duration-500"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-                  <div className="absolute bottom-0 left-0 right-0 p-8 text-white">
-                    <h3 className="text-2xl font-bold mb-3">{product.name}</h3>
-                    <p className="text-gray-200 leading-relaxed">
-                      {product.description}
-                    </p>
-                    <div className="mt-4 flex items-center space-x-2">
-                      <span className="text-green-400 font-semibold">
-                        {product.price}
-                      </span>
-                      <span className="text-sm text-gray-300">
-                        • Klik untuk detail
-                      </span>
-                    </div>
+          {loading ? (
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
+              {[...Array(4)].map((_, index) => (
+                <div key={index} className="bg-white rounded-2xl shadow-lg overflow-hidden animate-pulse">
+                  <div className="h-64 bg-gray-300"></div>
+                  <div className="p-6">
+                    <div className="h-6 bg-gray-300 rounded mb-3"></div>
+                    <div className="h-4 bg-gray-300 rounded mb-2"></div>
+                    <div className="h-4 bg-gray-300 rounded w-2/3"></div>
                   </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
+          ) : (
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
+              {products.map((product, index) => (
+                <Link
+                  key={product.id}
+                  to={`/products/${product.id}`}
+                  className="group block"
+                  data-aos="fade-up"
+                  data-aos-delay={index * 200}
+                >
+                  <div className="relative overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+                    <img
+                      src={getImageUrl(product.image_url)}
+                      alt={getImageAltText(product.name, product.category_name)}
+                      className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
+                    />
+                    <div className="bg-amber-600 p-6 text-white">
+                      <h3 className="text-xl font-bold mb-2">{product.name}</h3>
+                      <p className="text-gray-200 text-sm leading-relaxed mb-3">
+                        {product.description ? 
+                          product.description.replace(/<[^>]*>/g, '').substring(0, 80) + '...' : 
+                          'Produk berkualitas tinggi dari Pawon Bufatim'
+                        }
+                      </p>
+                      <div className="flex items-center justify-between">
+                        <span className="text-green-400 font-semibold">
+                          Rp {parseFloat(product.price).toLocaleString('id-ID')}
+                        </span>
+                        <span className="text-sm text-gray-300">
+                          Lihat Detail →
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          )}
+
+          {/* View All Products Button */}
+          <div className="text-center mt-12" data-aos="fade-up" data-aos-delay="800">
+            <Link
+              to="/products"
+              className="inline-flex items-center gap-2 px-8 py-4 bg-primary-600 text-white rounded-full font-semibold hover:bg-primary-700 transition-all duration-300 transform hover:scale-105"
+            >
+              <span>Lihat Semua Produk</span>
+              <ArrowRight size={20} />
+            </Link>
           </div>
         </div>
       </section>
@@ -303,7 +252,7 @@ const Home = () => {
       <section className="py-20 bg-gradient-to-r from-primary-600 to-secondary-600">
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-6" data-aos="fade-up">
-            Mari Bergabung dengan Keluarga Besar CEK AAT
+            Mari Bergabung dengan Keluarga Besar Pawon Bufatim
           </h2>
           <p
             className="text-xl text-gray-100 mb-8 leading-relaxed"
