@@ -1,15 +1,15 @@
-import { useEffect } from 'react';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
-import { Calendar, MapPin, Users, Target, Award, Heart } from 'lucide-react';
-import Logo from '../assets/logo.png';
+import { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { Calendar, MapPin, Users, Target, Award, Heart } from "lucide-react";
+import Logo from "../assets/logo.png";
 
 const About = () => {
   useEffect(() => {
     AOS.init({
       duration: 1000,
       once: true,
-      easing: 'ease-out-cubic',
+      easing: "ease-out-cubic",
     });
   }, []);
 
@@ -17,51 +17,57 @@ const About = () => {
     {
       year: "2000",
       title: "Pendirian Pawon Bufatim",
-      description: "Didirikan sebagai spesialis pempek dan tekwan berkualitas tinggi"
+      description:
+        "Didirikan sebagai spesialis pempek dan tekwan berkualitas tinggi",
     },
     {
       year: "2005",
       title: "Spesialisasi Produk",
-      description: "Fokus pada pengembangan produk pempek dan tekwan premium"
+      description: "Fokus pada pengembangan produk pempek dan tekwan premium",
     },
     {
       year: "2010",
       title: "Pengakuan Masyarakat",
-      description: "Mendapat kepercayaan luas dari masyarakat dengan produk berkualitas tinggi"
+      description:
+        "Mendapat kepercayaan luas dari masyarakat dengan produk berkualitas tinggi",
     },
     {
       year: "2020",
       title: "Era Digital",
-      description: "Memasuki era digital dengan kehadiran di media sosial dan platform online"
+      description:
+        "Memasuki era digital dengan kehadiran di media sosial dan platform online",
     },
     {
       year: "2025",
       title: "Inovasi Berkelanjutan",
-      description: "Terus berinovasi dalam produk pempek dan tekwan dengan kualitas premium"
-    }
+      description:
+        "Terus berinovasi dalam produk pempek dan tekwan dengan kualitas premium",
+    },
   ];
 
   const values = [
     {
       icon: <Heart className="w-8 h-8 text-primary-500" />,
       title: "Kualitas",
-      description: "Menjunjung tinggi kualitas dalam setiap produk yang dihasilkan"
+      description:
+        "Menjunjung tinggi kualitas dalam setiap produk yang dihasilkan",
     },
     {
       icon: <Users className="w-8 h-8 text-primary-500" />,
       title: "Kejujuran",
-      description: "Menjalankan bisnis dengan transparansi dan integritas tinggi"
+      description:
+        "Menjalankan bisnis dengan transparansi dan integritas tinggi",
     },
     {
       icon: <Target className="w-8 h-8 text-primary-500" />,
       title: "Keberlanjutan",
-      description: "Berkomitmen pada pembangunan ekonomi yang berkelanjutan"
+      description: "Berkomitmen pada pembangunan ekonomi yang berkelanjutan",
     },
     {
       icon: <Award className="w-8 h-8 text-primary-500" />,
       title: "Pemberdayaan",
-      description: "Memberdayakan masyarakat lokal dan ekonomi kerakyatan"
-    }
+      description: "Memberdayakan masyarakat lokal dan ekonomi kerakyatan",
+    },
   ];
 
   return (
@@ -70,18 +76,19 @@ const About = () => {
       <section className="relative py-16 md:py-20 bg-gradient-to-br from-primary-600 via-primary-500 to-secondary-600 overflow-hidden">
         <div className="absolute inset-0 bg-[url('https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=1920')] bg-cover bg-center opacity-10"></div>
         <div className="relative z-10 max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
-          <h1 
+          <h1
             className="text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-4 md:mb-6"
             data-aos="fade-up"
           >
             Tentang <span className="text-primary-200">Pawon Bufatim</span>
           </h1>
-          <p 
+          <p
             className="text-lg md:text-xl text-gray-100 leading-relaxed"
             data-aos="fade-up"
             data-aos-delay="200"
           >
-            Specialist pempek dan tekwan berkualitas tinggi dengan cita rasa tradisional
+            Specialist pempek dan tekwan berkualitas tinggi dengan cita rasa
+            tradisional
           </p>
         </div>
       </section>
@@ -100,21 +107,46 @@ const About = () => {
             <div data-aos="fade-left" className="order-1 lg:order-2">
               <div className="flex items-center space-x-2 mb-4">
                 <Calendar className="w-5 h-5 md:w-6 md:h-6 text-primary-500" />
-                <span className="text-primary-500 font-semibold text-sm md:text-base">Spesialis Pempek & Tekwan</span>
+                <span className="text-primary-500 font-semibold text-sm md:text-base">
+                  Spesialis Pempek & Tekwan
+                </span>
               </div>
               <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6">
                 Cerita Kami Dimulai
               </h2>
               <div className="space-y-3 md:space-y-4 text-gray-600 leading-relaxed text-sm md:text-base">
                 <p>
-                  Pawon Bufatim adalah spesialis pempek dan tekwan yang berkomitmen menghadirkan produk berkualitas tinggi dengan cita rasa tradisional. Kami fokus pada pengembangan produk pempek dan tekwan autentik yang telah dipercaya oleh masyarakat dengan standar kualitas terbaik.
+                  pawon Bu Fatim merupakan sebuah warung makan yang berdiri sejak
+                  September 2020, menawarkan berbagai masakan tradisional
+                  Indonesia yang kaya rasa serta kreasi masakan modern dengan
+                  sentuhan lokal. Terletak di lokasi strategis, warung ini
+                  berhasil menarik perhatian berbagai kalangan, mulai dari
+                  keluarga, pekerja, hingga mahasiswa, berkat menu yang beragam
+                  dan harga yang terjangkau. Menunya mencakup berbagai hidangan
+                  khas Indonesia, seperti nasi campur dengan bermacam lauk
+                  seperti seafood hingga soto seperti Soto Banjar, Soto Betawi,
+                  Rawon dan juga yang lainnya. Selain itu, Pawon Bu Fatim juga
+                  menggabungkan unsur modern dalam sajian seperti ayam goreng
+                  dengan sambal tradisional yang terinspirasi dari rempah-rempah
+                  nusantara. Kualitas bahan baku yang segar dan penggunaan
+                  rempah-rempah asli Indonesia menjadi keunggulan utama dari
+                  setiap hidangan yang disajikan. Dengan suasana yang nyaman dan
+                  pelayanan yang ramah, Pawon Bu Fatim memberikan pengalaman
+                  makan yang hangat dan otentik, cocok untuk dinikmati bersama
+                  keluarga atau teman.
+                </p>
+                {/* <p>
+                  Dengan pengalaman dan keahlian dalam bidang pempek dan tekwan,
+                  Pawon Bufatim terus berinovasi untuk menghadirkan produk
+                  terbaik. Kami menjunjung tinggi kualitas, kejujuran, dan
+                  konsistensi dalam setiap produk yang kami hasilkan.
                 </p>
                 <p>
-                  Dengan pengalaman dan keahlian dalam bidang pempek dan tekwan, Pawon Bufatim terus berinovasi untuk menghadirkan produk terbaik. Kami menjunjung tinggi kualitas, kejujuran, dan konsistensi dalam setiap produk yang kami hasilkan.
-                </p>
-                <p>
-                  Pawon Bufatim berfokus pada spesialisasi pempek dan tekwan berkualitas tinggi. Kami terus berkembang dan berinovasi untuk memenuhi kebutuhan pelanggan yang menginginkan cita rasa pempek dan tekwan terbaik dengan standar kualitas premium.
-                </p>
+                  Pawon Bufatim berfokus pada spesialisasi pempek dan tekwan
+                  berkualitas tinggi. Kami terus berkembang dan berinovasi untuk
+                  memenuhi kebutuhan pelanggan yang menginginkan cita rasa
+                  pempek dan tekwan terbaik dengan standar kualitas premium.
+                </p> */}
               </div>
             </div>
           </div>
@@ -125,18 +157,19 @@ const About = () => {
       <section className="py-16 md:py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12 md:mb-16">
-            <h2 
+            <h2
               className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-3 md:mb-4"
               data-aos="fade-up"
             >
               Nilai-Nilai Kami
             </h2>
-            <p 
+            <p
               className="text-base md:text-xl text-gray-600 max-w-3xl mx-auto"
               data-aos="fade-up"
               data-aos-delay="200"
             >
-              Prinsip-prinsip yang menjadi fondasi dalam setiap langkah perjalanan Pawon Bufatim
+              Prinsip-prinsip yang menjadi fondasi dalam setiap langkah
+              perjalanan Pawon Bufatim
             </p>
           </div>
 
@@ -148,7 +181,9 @@ const About = () => {
                 data-aos="fade-up"
                 data-aos-delay={index * 100}
               >
-                <div className="flex justify-center mb-3 md:mb-4">{value.icon}</div>
+                <div className="flex justify-center mb-3 md:mb-4">
+                  {value.icon}
+                </div>
                 <h3 className="text-lg md:text-xl font-semibold text-gray-900 mb-2 md:mb-3">
                   {value.title}
                 </h3>
@@ -234,29 +269,35 @@ const About = () => {
       <section className="py-16 md:py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12 md:mb-16">
-            <h2 
+            <h2
               className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-3 md:mb-4"
               data-aos="fade-up"
             >
               Lokasi Kami
             </h2>
-            <div 
+            <div
               className="flex items-center justify-center space-x-2 text-base md:text-xl text-gray-600"
               data-aos="fade-up"
               data-aos-delay="200"
             >
               <MapPin className="w-5 h-5 md:w-6 md:h-6 text-primary-500" />
-              <span className="text-sm md:text-base">Jalan Sei Wain No.KM.15 No.47, Karang Joang, Balikpapan Utara, Balikpapan, Kalimantan Timur</span>
+              <span className="text-sm md:text-base">
+                Jalan Sei Wain No.KM.15 No.47, Karang Joang, Balikpapan Utara,
+                Balikpapan, Kalimantan Timur
+              </span>
             </div>
           </div>
 
-          <div 
+          <div
             className="bg-white rounded-2xl shadow-lg p-6 md:p-8 text-center"
             data-aos="fade-up"
             data-aos-delay="400"
           >
             <p className="text-sm md:text-base text-gray-600 leading-relaxed max-w-3xl mx-auto">
-              Berlokasi strategis di Balikpapan, Pawon Bufatim mudah diakses dan telah menjadi bagian dari kehidupan masyarakat lokal. Lokasi ini dipilih dengan pertimbangan kedekatan dengan komunitas yang ingin kami layani dengan produk pempek dan tekwan berkualitas tinggi.
+              Berlokasi strategis di Balikpapan, Pawon Bufatim mudah diakses dan
+              telah menjadi bagian dari kehidupan masyarakat lokal. Lokasi ini
+              dipilih dengan pertimbangan kedekatan dengan komunitas yang ingin
+              kami layani dengan produk pempek dan tekwan berkualitas tinggi.
             </p>
           </div>
         </div>
