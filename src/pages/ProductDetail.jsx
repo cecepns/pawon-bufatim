@@ -2,9 +2,11 @@ import { useEffect, useState } from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { ArrowLeft, Star, Share2, Phone, MessageCircle } from "lucide-react";
+import { ArrowLeft, Star, Share2, ShoppingCart, Plus, Minus, MessageCircle } from "lucide-react";
 import axios from "../config/axios";
 import { getImageUrl, getImageAltText, getLargeImageUrl } from "../utils/imageUtils";
+import { useCart } from "../contexts/CartContext";
+import toast from "react-hot-toast";
 
 const ProductDetail = () => {
   const { id } = useParams();
@@ -13,6 +15,8 @@ const ProductDetail = () => {
   const [relatedProducts, setRelatedProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [imageLoaded, setImageLoaded] = useState(false);
+  const [quantity, setQuantity] = useState(1);
+  const { addToCart } = useCart();
 
   useEffect(() => {
     AOS.init({
@@ -89,6 +93,24 @@ const ProductDetail = () => {
       alert('Link produk telah disalin ke clipboard!');
     }
   };
+
+  const handleAddToCart = () => {
+    addToCart({
+      id: product.id,
+      name: product.name,
+      price: parseFloat(product.price),
+      image: getImageUrl(product.image_url),
+      category_name: product.category_name
+    }, quantity);
+    
+    toast.success(`${quantity} ${product.name} ditambahkan ke keranjang`, {
+      position: 'bottom-center',
+      duration: 3000,
+    });
+  };
+
+  const increaseQuantity = () => setQuantity(prev => prev + 1);
+  const decreaseQuantity = () => setQuantity(prev => Math.max(1, prev - 1));
 
   if (loading) {
     return (
@@ -188,39 +210,57 @@ const ProductDetail = () => {
                 <div className="text-3xl font-bold text-primary-600 mb-2">
                   Rp {parseFloat(product.price).toLocaleString('id-ID')}
                 </div>
-                <p className="text-gray-600 text-sm">
+                <p className="text-gray-600 text-sm mb-4">
                   Harga sudah termasuk pajak dan ongkos kirim
                 </p>
-              </div>
-
-              {product.description && (
-                <div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-4">Deskripsi Produk</h3>
-                  <div 
-                    className="prose prose-gray max-w-none"
-                    dangerouslySetInnerHTML={{ __html: product.description }}
-                  />
+                
+                <div className="flex items-center space-x-4 mb-4">
+                  <div className="flex items-center border border-gray-300 rounded-lg overflow-hidden">
+                    <button 
+                      onClick={decreaseQuantity}
+                      className="px-3 py-2 bg-gray-100 hover:bg-gray-200 transition-colors"
+                      aria-label="Kurangi jumlah"
+                    >
+                      <Minus size={16} />
+                    </button>
+                    <span className="w-12 text-center font-medium">{quantity}</span>
+                    <button 
+                      onClick={increaseQuantity}
+                      className="px-3 py-2 bg-gray-100 hover:bg-gray-200 transition-colors"
+                      aria-label="Tambah jumlah"
+                    >
+                      <Plus size={16} />
+                    </button>
+                  </div>
+                  
+                  <button
+                    onClick={handleAddToCart}
+                    className="flex-1 bg-primary-600 hover:bg-primary-700 text-white font-medium py-2 px-6 rounded-lg transition-colors flex items-center justify-center gap-2"
+                  >
+                    <ShoppingCart size={20} />
+                    Masukkan Keranjang
+                  </button>
                 </div>
-              )}
 
-              {/* Action Buttons */}
-              <div className="space-y-4">
                 <button
                   onClick={handleWhatsAppOrder}
-                  className="w-full bg-green-600 text-white py-4 px-6 rounded-xl font-semibold hover:bg-green-700 transition-colors duration-200 flex items-center justify-center gap-3"
+                  className="w-full bg-green-600 hover:bg-green-700 text-white font-medium py-3 px-6 rounded-lg transition-colors flex items-center justify-center gap-2 mb-3"
                 >
-                  <MessageCircle size={24} />
+                  <MessageCircle size={20} />
                   Pesan via WhatsApp
                 </button>
-                
-                <button
-                  onClick={handleWhatsAppOrder}
-                  className="w-full bg-primary-600 text-white py-4 px-6 rounded-xl font-semibold hover:bg-primary-700 transition-colors duration-200 flex items-center justify-center gap-3"
-                >
-                  <Phone size={24} />
-                  Hubungi Kami
-                </button>
+
+                {product.description && (
+                  <div className="mt-6">
+                    <h3 className="text-lg font-semibold text-gray-900 mb-2">Deskripsi Produk</h3>
+                    <div 
+                      className="prose prose-gray max-w-none"
+                      dangerouslySetInnerHTML={{ __html: product.description }}
+                    />
+                  </div>
+                )}
               </div>
+
 
               {/* Product Features */}
               <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-200">

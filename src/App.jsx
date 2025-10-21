@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-route
 import { useEffect } from 'react';
 import { Toaster } from 'react-hot-toast';
 import { AdminProvider } from './contexts/AdminContext';
+import { CartProvider } from './contexts/CartContext';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import WhatsAppButton from './components/WhatsAppButton';
@@ -16,6 +17,7 @@ import AdminLogin from './pages/AdminLogin';
 import AdminDashboard from './pages/AdminDashboard';
 import AdminCategories from './pages/AdminCategories';
 import AdminProducts from './pages/AdminProducts';
+import Cart from './pages/Cart';
 
 // Component to handle scrolling to top on route change
 function ScrollToTop() {
@@ -31,6 +33,7 @@ function ScrollToTop() {
 function App() {
   return (
     <AdminProvider>
+      <CartProvider>
       <Router>
         <div className="App overflow-x-hidden">
           <ScrollToTop />
@@ -87,6 +90,13 @@ function App() {
                 <WhatsAppButton />
               </>
             } />
+            <Route path="/cart" element={
+              <>
+                <Navbar />
+                <Cart />
+                <Footer />
+              </>
+            } />
             
             {/* Admin Routes */}
             <Route path="/admin/login" element={<AdminLogin />} />
@@ -114,6 +124,7 @@ function App() {
           </Routes>
         </div>
       </Router>
+      </CartProvider>
     </AdminProvider>
   );
 }
